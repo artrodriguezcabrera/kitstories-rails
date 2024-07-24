@@ -9,7 +9,7 @@
     <%= link_to "Edit this federation", edit_federation_path(@federation) %>
     <%= link_to "Back to federations", federations_path %>
     <div>
-      <%= button_to "Destroy this federation", @federation, method: :delete %>
+      <%= button_to "Destroy this federation", @federation, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   </div>
 </div>

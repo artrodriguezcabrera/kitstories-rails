@@ -1,0 +1,19 @@
+<h1>Welcome to KitStories</h1>
+<!-- app/views/home/index.html.erb -->
+
+<h1>Federations</h1>
+
+<ul>
+  <% @federations.each do |federation| %>
+    <li><%= link_to federation.name, federation_path(federation) %></li>
+  <% end %>
+</ul>
+<%= link_to 'New Federation', new_federation_path %>
+
+<h1>Teams</h1>
+<ul>
+  <% @teams.each do |team| %>
+    <li><%= link_to team.name, team_path(team) %></li>
+  <% end %>
+</ul>
+<%= link_to 'New Team', new_team_path %>

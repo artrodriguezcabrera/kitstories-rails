@@ -1,0 +1,20 @@
+<%= form_with(model: @team, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.country_select :country, { include_blank: 'Select a country' } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :federation_id, "Federation" %>
+    <%= form.collection_select :federation_id, @federations, :id, :name, prompt: "Select a Federation" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
