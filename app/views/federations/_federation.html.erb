@@ -1,7 +1,10 @@
 <div id="<%= dom_id federation %>">
-  <p>
-    <strong>Name:</strong>
-    <%= federation.name %>
-  </p>
+  <h2><%= federation.name %></h2>
+  <div>
+    <% federation.teams.each do |team| %>
+      <h3>Teams</h3>
+      <li><%= team.name %></li>
 
+    <% end %>
+  </div>
 </div>
