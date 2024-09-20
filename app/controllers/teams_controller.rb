@@ -16,16 +16,23 @@ class TeamsController < ApplicationController
   # GET /teams/new
   def new
     @team = Team.new
+    @team.build_federation  # Build an empty Federation object
   end
 
   # GET /teams/1/edit
   def edit
+    @team.build_federation unless @team.federation.present?  # Only build if one doesn't exist
   end
 
   # POST /teams
   # POST /teams.json
   def create
     @team = Team.new(team_params)
+
+    if params[:team][:federation_attributes][:name].present?
+      federation = Federation.find_or_create_by(name: params[:team][:federation_attributes][:name])
+      @team.federation = federation
+    end
 
     respond_to do |format|
       if @team.save
@@ -75,6 +82,6 @@ class TeamsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def team_params
-      params.require(:team).permit(:name, :country, :federation_id)
+      params.require(:team).permit(:name, :country, :federation_id, federation_attributes: [:name])
     end
 end
