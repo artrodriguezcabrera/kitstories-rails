@@ -1,0 +1,6 @@
+<h1>Edit Kit for <%= @team.name %> - <%= @kit.year %></h1>
+
+<%= render 'form', team: @team, kit: @kit %>
+
+<%= link_to 'Show Kit', team_kit_path(@team, @kit) %> |
+<%= link_to 'Back to Kits', team_kits_path(@team) %>

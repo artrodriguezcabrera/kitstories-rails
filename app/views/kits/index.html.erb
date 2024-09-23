@@ -1,0 +1,7 @@
+<h1><%= @team.name %> Kit Years</h1>
+
+<ul>
+  <% @kits.each do | kit | %>
+    <li><%= link_to kit.year, team_kit_path(@team, kit) %></li>
+  <% end %>
+</ul>

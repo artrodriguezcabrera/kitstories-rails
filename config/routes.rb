@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'home#index'
-  resources :teams
+  resources :teams do
+    resources :kits
+  end
   resources :federations
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

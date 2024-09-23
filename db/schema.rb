@@ -10,11 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_24_215546) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_20_191629) do
   create_table "federations", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "kits", force: :cascade do |t|
+    t.string "year"
+    t.integer "team_id", null: false
+    t.string "kit"
+    t.string "brand"
+    t.text "design_notes"
+    t.string "full_kit"
+    t.string "league_finish"
+    t.string "wins"
+    t.string "draws"
+    t.string "losses"
+    t.string "total_points"
+    t.string "manager"
+    t.string "honors"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_kits_on_team_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -26,5 +45,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_24_215546) do
     t.index ["federation_id"], name: "index_teams_on_federation_id"
   end
 
+  add_foreign_key "kits", "teams"
   add_foreign_key "teams", "federations"
 end

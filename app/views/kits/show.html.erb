@@ -1,0 +1,21 @@
+<h1><%= @team.name %> Kit - <%= @kit.year %></h1>
+
+<p><strong>Year:</strong> <%= @kit.year %></p>
+<p><strong>Kit Type:</strong> <%= @kit.kit %></p>
+<p><strong>Brand:</strong> <%= @kit.brand %></p>
+<p><strong>Design Notes:</strong> <%= @kit.design_notes %></p>
+<p><strong>Full Kit Description:</strong> <%= @kit.full_kit %></p>
+<p><strong>League Finish:</strong> <%= @kit.league_finish %></p>
+<p><strong>Wins:</strong> <%= @kit.wins %></p>
+<p><strong>Draws:</strong> <%= @kit.draws %></p>
+<p><strong>Losses:</strong> <%= @kit.losses %></p>
+<p><strong>Total Points:</strong> <%= @kit.total_points %></p>
+<p><strong>Manager:</strong> <%= @kit.manager %></p>
+<p><strong>Honors:</strong> <%= @kit.honors %></p>
+
+
+<%= link_to 'Edit Kit', edit_team_kit_path(@team, @kit) %> |
+<%= link_to 'Back to Kits', team_kits_path(@team) %> |
+
+<!-- Add the Destroy link -->
+<%= link_to 'Delete Kit', team_kit_path(@team, @kit), method: :delete, data: { confirm: 'Are you sure?' } %>

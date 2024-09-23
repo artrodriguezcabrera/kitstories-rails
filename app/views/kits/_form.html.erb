@@ -1,0 +1,86 @@
+<%= form_with(model: [@team, @kit], local: true) do |form| %>
+  <!-- Dropdown for year -->
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.select :year, options_for_select((1930..2024).to_a.reverse), prompt: "Select Year" %>
+  </div>
+
+  <!-- Dropdown for existing teams -->
+  <div class="field">
+    <%= form.label :team_id %>
+    <%= form.collection_select(:team_id, Team.all, :id, :name, prompt: "Select Team") %>
+  </div>
+
+  <!-- Radio buttons for Home/Away -->
+  <div class="field">
+    <%= form.label :kit %>
+    <%= form.radio_button :kit, 'Home' %>
+    <%= form.label :kit, 'Home' %>
+    <%= form.radio_button :kit, 'Away' %>
+    <%= form.label :kit, 'Away' %>
+  </div>
+
+  <!-- Dropdown for Brand -->
+  <div class="field">
+    <%= form.label :brand %>
+    <%= form.select :brand, options_for_select(['Adidas', 'Nike', 'Puma', 'Umbro', 'Macron', 'Kappa', 'Hummel', 'Diadora', 'Lotto', 'New Balance', 'Joma', 'Admiral', 'Errea', 'Marathon', 'Castore', 'Mizuno', 'Zeus']), prompt: "Select Brand" %>
+  </div>
+
+  <!-- Design Notes -->
+  <div class="field">
+    <%= form.label :design_notes %>
+    <%= form.text_area :design_notes %>
+  </div>
+
+  <!-- Full Kit Description -->
+  <div class="field">
+    <%= form.label :full_kit %>
+    <%= form.text_field :full_kit %>
+  </div>
+
+  <!-- Dropdown for League Finish -->
+  <div class="field">
+    <%= form.label :league_finish %>
+    <%= form.select :league_finish, options_for_select(['1st Place', '2nd Place', '3rd Place', '4th Place', '5th Place', '6th Place', '7th Place', '8th Place', '9th Place', '10th Place']), prompt: "Select League Finish" %>
+  </div>
+
+  <!-- Wins -->
+  <div class="field">
+    <%= form.label :wins %>
+    <%= form.text_field :wins %>
+  </div>
+
+  <!-- Draws -->
+  <div class="field">
+    <%= form.label :draws %>
+    <%= form.text_field :draws %>
+  </div>
+
+  <!-- Losses -->
+  <div class="field">
+    <%= form.label :losses %>
+    <%= form.text_field :losses %>
+  </div>
+
+  <!-- Total Points -->
+  <div class="field">
+    <%= form.label :total_points %>
+    <%= form.text_field :total_points %>
+  </div>
+
+  <!-- Manager -->
+  <div class="field">
+    <%= form.label :manager %>
+    <%= form.text_field :manager %>
+  </div>
+
+  <!-- Honors -->
+  <div class="field">
+    <%= form.label :honors %>
+    <%= form.text_field :honors %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

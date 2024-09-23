@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year: MyString
+  team: one
+  kit: MyString
+  brand: MyString
+  design_notes: MyText
+  full_kit: MyString
+  league_finish: MyString
+  wins: MyString
+  draws: MyString
+  losses: MyString
+  total_points: MyString
+  manager: MyString
+  honors: MyString
+
+two:
+  year: MyString
+  team: two
+  kit: MyString
+  brand: MyString
+  design_notes: MyText
+  full_kit: MyString
+  league_finish: MyString
+  wins: MyString
+  draws: MyString
+  losses: MyString
+  total_points: MyString
+  manager: MyString
+  honors: MyString
